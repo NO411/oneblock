@@ -9,14 +9,18 @@ local wait_time = 60
 local timer = 0
 local clock = 0
 local timer_hud = {}
-local item_pos = { x = 0, y = 0.6, z = 0 }
+local item_pos = { x = 0, y = 0.5, z = 0 }
 local mcl_core_mod = minetest.get_modpath("mcl_core")
+
+local function set_ppos(player)
+    player:set_pos(item_pos)
+end
 
 minetest.register_on_mods_loaded(function()
     for item, def in pairs(minetest.registered_items) do
-        if item ~= "" and item ~= "air" and item ~= "ignore" and item ~= "unknown" and 
-        def and def.description and def.description ~= "" and def._tt_ignore ~= true and 
-        def.groups.not_in_creative_inventory ~= 1 then
+        if item ~= "" and item ~= "air" and item ~= "ignore" and item ~= "unknown" 
+        and def and def.description and def.description ~= ""
+        and def.groups.not_in_creative_inventory ~= 1 then
             table.insert(oneblock.items, item)
         end
     end
@@ -32,7 +36,10 @@ minetest.register_on_joinplayer(function(player)
         z_index = 1001,
         number = 0xFFEE00,
     })
-    player:set_pos({ x = 0, y = 4, z = 0 })
+end)
+
+minetest.register_on_newplayer(function(player)
+    set_ppos(player)
 end)
 
 minetest.register_on_leaveplayer(function(player)
@@ -40,7 +47,7 @@ minetest.register_on_leaveplayer(function(player)
 end)
 
 minetest.register_on_respawnplayer(function(player)
-    player:set_pos({ x = 0, y = 2, z = 0 })
+    set_ppos(player)
     return true
 end)
 
