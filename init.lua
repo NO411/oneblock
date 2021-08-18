@@ -1,6 +1,11 @@
 local modname = minetest.get_current_modname()
 local S = minetest.get_translator(modname)
 
+if minetest.get_mapgen_setting("mg_name") ~= "singlenode" then
+    minetest.log("error", "Select singlenode mapgenerator in the world creation menu!")
+    return
+end
+
 oneblock = {
     items = {},
 }
