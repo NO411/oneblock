@@ -9,4 +9,7 @@ by NO11
 
 Build your island in the sky. Every 30 seconds you will receive a random block or item from the oneblock to expand the island!
 
+![screenshot](https://content.minetest.net/uploads/aee389ae53.png)
+![screenshot](https://content.minetest.net/uploads/c61684ab26.png)
+
 Inspired by: <https://www.youtube.com/watch?v=BBJ5gX9N3kE>
