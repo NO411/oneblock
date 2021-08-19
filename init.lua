@@ -10,7 +10,7 @@ oneblock = {
     items = {},
 }
 
-local wait_time = 60
+local wait_time = 30
 local timer = 0
 local clock = 0
 local timer_hud = {}
