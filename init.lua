@@ -14,7 +14,7 @@ local wait_time = 30 + 1
 local timer = 0
 local clock = 0
 local timer_hud = {}
-local item_pos = { x = 0, y = 0.5, z = 0 }
+local item_pos = { x = 0, y = 1, z = 0 }
 local mcl_core_mod = minetest.get_modpath("mcl_core")
 
 local function set_ppos(player)
