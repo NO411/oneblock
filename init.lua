@@ -80,7 +80,7 @@ end)
 if not mcl_core_mod then
     minetest.register_node("oneblock:oneblock", {
         description = "oneblock",
-        tiles = { "blank.png" },
+        tiles = { "oneblock.png" },
     })
 end
 
