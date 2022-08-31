@@ -2,7 +2,7 @@ local modname = minetest.get_current_modname()
 local S = minetest.get_translator(modname)
 
 minetest.register_on_mapgen_init(function(mgparams)
-	minetest.set_mapgen_params({mgname = "singlenode"})
+	minetest.set_mapgen_setting("mg_name", "singlenode", true)
 end)
 
 oneblock = {
