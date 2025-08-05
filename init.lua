@@ -22,7 +22,7 @@ end
 
 minetest.register_on_mods_loaded(function()
 	for item, def in pairs(minetest.registered_items) do
-		if item ~= "" and item ~= "air" and item ~= "ignore" and item ~= "unknown" 
+		if item ~= "" and item ~= "air" and item ~= "ignore" and item ~= "unknown"
 		and def and def.description and def.description ~= ""
 		and def.groups.not_in_creative_inventory ~= 1
 		and item ~= "oneblock:oneblock" and item ~= "mcl_core:bedrock" then
@@ -80,6 +80,7 @@ if not mcl_core_mod then
 	minetest.register_node("oneblock:oneblock", {
 		description = "oneblock",
 		tiles = {"oneblock.png"},
+		on_blast = function(pos, intensity) end,
 	})
 end
 
