@@ -80,6 +80,7 @@ if not mcl_core_mod then
 	minetest.register_node("oneblock:oneblock", {
 		description = "oneblock",
 		tiles = {"oneblock.png"},
+		on_blast = function(pos, intensity) end,
 	})
 end
 
