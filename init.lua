@@ -1,9 +1,7 @@
 local modname = core.get_current_modname()
 local S = core.get_translator(modname)
 
-core.register_on_mapgen_init(function(mgparams)
-	core.set_mapgen_setting("mg_name", "singlenode", true)
-end)
+core.set_mapgen_setting("mg_name", "singlenode", true)
 
 oneblock = {
 	items = {},
