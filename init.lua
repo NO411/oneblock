@@ -33,7 +33,7 @@ end)
 
 core.register_on_joinplayer(function(player)
 	timer_hud[player] = player:hud_add({
-		hud_elem_type = "text",
+		type = "text",
 		text = "",
 		position = {x = 0.5, y = 0.05},
 		alignment = {x = 0, y = 0},
