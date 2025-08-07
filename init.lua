@@ -56,7 +56,10 @@ minetest.register_on_respawnplayer(function(player)
 	return true
 end)
 
-minetest.register_globalstep(function(dtime)
+core.register_globalstep(function(dtime)
+	if (#core.get_connected_players() < 1) then
+		return
+	end
 	timer = timer + dtime
 	clock = clock + dtime
 	if clock >= 1 then
