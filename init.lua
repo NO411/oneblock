@@ -55,6 +55,9 @@ core.register_on_respawnplayer(function(player)
 end)
 
 core.register_globalstep(function(dtime)
+	if (#core.get_connected_players() < 1) then
+		return
+	end
 	timer = timer + dtime
 	clock = clock + dtime
 	if clock >= 1 then
