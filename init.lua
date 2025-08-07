@@ -25,6 +25,8 @@ local forbidden_items = {
 	["unknown"] = true,
 	["oneblock:oneblock"] = true,
 	["mcl_core:bedrock"] = true,
+	["mcl_commandblock:commandblock_off"] = true,
+	["mcl_commandblock:commandblock_on"] = true,
 }
 
 core.register_on_mods_loaded(function()
