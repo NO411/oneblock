@@ -18,12 +18,20 @@ local function set_ppos(player)
 	player:set_pos(item_pos)
 end
 
+local forbidden_items = {
+	[""] = true,
+	["air"] = true,
+	["ignore"] = true,
+	["unknown"] = true,
+	["oneblock:oneblock"] = true,
+	["mcl_core:bedrock"] = true,
+}
+
 core.register_on_mods_loaded(function()
 	for item, def in pairs(core.registered_items) do
-		if item ~= "" and item ~= "air" and item ~= "ignore" and item ~= "unknown"
+		if not forbidden_items[item]
 		and def and def.description and def.description ~= ""
-		and def.groups.not_in_creative_inventory ~= 1
-		and item ~= "oneblock:oneblock" and item ~= "mcl_core:bedrock" then
+		and def.groups.not_in_creative_inventory ~= 1 then
 			table.insert(oneblock.items, item)
 		end
 	end
