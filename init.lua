@@ -18,12 +18,36 @@ local function set_ppos(player)
 	player:set_pos(item_pos)
 end
 
+local forbidden_items = {
+	[""] = true,
+	["air"] = true,
+	["ignore"] = true,
+	["unknown"] = true,
+	["oneblock:oneblock"] = true,
+	["mcl_core:bedrock"] = true,
+	["mcl_commandblock:commandblock_off"] = true,
+	["mcl_commandblock:commandblock_on"] = true,
+	["mcl_core:light_1"] = true,
+	["mcl_core:light_2"] = true,
+	["mcl_core:light_3"] = true,
+	["mcl_core:light_4"] = true,
+	["mcl_core:light_5"] = true,
+	["mcl_core:light_6"] = true,
+	["mcl_core:light_7"] = true,
+	["mcl_core:light_8"] = true,
+	["mcl_core:light_9"] = true,
+	["mcl_core:light_10"] = true,
+	["mcl_core:light_11"] = true,
+	["mcl_core:light_12"] = true,
+	["mcl_core:light_13"] = true,
+	["mcl_core:light_14"] = true,
+}
+
 core.register_on_mods_loaded(function()
 	for item, def in pairs(core.registered_items) do
-		if item ~= "" and item ~= "air" and item ~= "ignore" and item ~= "unknown"
+		if not forbidden_items[item]
 		and def and def.description and def.description ~= ""
-		and def.groups.not_in_creative_inventory ~= 1
-		and item ~= "oneblock:oneblock" and item ~= "mcl_core:bedrock" then
+		and def.groups.not_in_creative_inventory ~= 1 then
 			table.insert(oneblock.items, item)
 		end
 	end
