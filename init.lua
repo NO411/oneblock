@@ -27,6 +27,20 @@ local forbidden_items = {
 	["mcl_core:bedrock"] = true,
 	["mcl_commandblock:commandblock_off"] = true,
 	["mcl_commandblock:commandblock_on"] = true,
+	["mcl_core:light_1"] = true,
+	["mcl_core:light_2"] = true,
+	["mcl_core:light_3"] = true,
+	["mcl_core:light_4"] = true,
+	["mcl_core:light_5"] = true,
+	["mcl_core:light_6"] = true,
+	["mcl_core:light_7"] = true,
+	["mcl_core:light_8"] = true,
+	["mcl_core:light_9"] = true,
+	["mcl_core:light_10"] = true,
+	["mcl_core:light_11"] = true,
+	["mcl_core:light_12"] = true,
+	["mcl_core:light_13"] = true,
+	["mcl_core:light_14"] = true,
 }
 
 core.register_on_mods_loaded(function()
